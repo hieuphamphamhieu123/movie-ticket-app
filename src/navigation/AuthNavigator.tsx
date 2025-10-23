@@ -7,7 +7,8 @@ const Stack = createStackNavigator();
 
 const AuthNavigator = () => {
   return (
-    <Stack.Navigator  // ❌ KHÔNG có NavigationContainer
+    <Stack.Navigator
+      id={undefined}
       screenOptions={{
         headerShown: false,
         cardStyle: { backgroundColor: '#000000' },

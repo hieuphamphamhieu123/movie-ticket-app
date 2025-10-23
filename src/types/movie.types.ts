@@ -1,16 +1,13 @@
-// src/types/movie.types.ts
-
 export interface Movie {
-  id: number;
+  id: string;
   title: string;
-  poster: string;
-  backdrop?: string;
-  description: string;
-  rating: number;
-  releaseDate: string;
+  overview: string;
+  poster_path: string;
+  backdrop_path: string; // Remove ? to make it required
+  vote_average: number;
+  release_date: string;
   genres: string[];
   duration?: number;
-  language?: string;
   isFavorite?: boolean;
 }
 
@@ -19,18 +16,9 @@ export interface Genre {
   name: string;
 }
 
-export interface MovieState {
-  movies: Movie[];
-  popularMovies: Movie[];
-  favorites: Movie[];
-  selectedMovie: Movie | null;
-  isLoading: boolean;
-  error: string | null;
-}
-
 export interface MovieListResponse {
-  results: Movie[];
   page: number;
+  results: Movie[];
   total_pages: number;
   total_results: number;
 }

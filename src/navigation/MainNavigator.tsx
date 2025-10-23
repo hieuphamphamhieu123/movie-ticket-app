@@ -1,9 +1,9 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Text } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
-// Import screens
+// Import REAL screens
 import HomeScreen from '../screens/home/HomeScreen';
 import SearchScreen from '../screens/search/SearchScreen';
 import BookingsScreen from '../screens/booking/BookingsScreen';
@@ -16,7 +16,8 @@ const Stack = createStackNavigator();
 
 const MainTabs = () => {
   return (
-    <Tab.Navigator  // ❌ KHÔNG có NavigationContainer
+    <Tab.Navigator
+      id={undefined}
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
@@ -38,8 +39,8 @@ const MainTabs = () => {
         component={HomeScreen}
         options={{
           tabBarLabel: 'Home',
-          tabBarIcon: ({ color }) => (
-            <Text style={{ color, fontSize: 20 }}>🏠</Text>
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home" size={size} color={color} />
           ),
         }}
       />
@@ -48,8 +49,8 @@ const MainTabs = () => {
         component={SearchScreen}
         options={{
           tabBarLabel: 'Search',
-          tabBarIcon: ({ color }) => (
-            <Text style={{ color, fontSize: 20 }}>🔍</Text>
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="search" size={size} color={color} />
           ),
         }}
       />
@@ -58,8 +59,8 @@ const MainTabs = () => {
         component={BookingsScreen}
         options={{
           tabBarLabel: 'Bookings',
-          tabBarIcon: ({ color }) => (
-            <Text style={{ color, fontSize: 20 }}>🎫</Text>
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="ticket" size={size} color={color} />
           ),
         }}
       />
@@ -68,8 +69,8 @@ const MainTabs = () => {
         component={ProfileScreen}
         options={{
           tabBarLabel: 'Profile',
-          tabBarIcon: ({ color }) => (
-            <Text style={{ color, fontSize: 20 }}>👤</Text>
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="person" size={size} color={color} />
           ),
         }}
       />
@@ -79,7 +80,8 @@ const MainTabs = () => {
 
 const MainNavigator = () => {
   return (
-    <Stack.Navigator  // ❌ KHÔNG có NavigationContainer
+    <Stack.Navigator
+      id={undefined}
       screenOptions={{
         headerShown: false,
         cardStyle: { backgroundColor: '#000000' },
