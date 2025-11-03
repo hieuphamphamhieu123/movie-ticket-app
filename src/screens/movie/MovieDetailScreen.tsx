@@ -45,7 +45,7 @@ const MovieDetailScreen = () => {
 
   const handleBookNow = () => {
     if (selectedMovie) {
-      navigation.navigate('Payment', {
+      navigation.navigate('SeatSelection', {
         movieId: selectedMovie.id,
         movieTitle: selectedMovie.title,
         poster: selectedMovie.poster_path,

@@ -9,6 +9,7 @@ import SearchScreen from '../screens/search/SearchScreen';
 import BookingsScreen from '../screens/booking/BookingsScreen';
 import ProfileScreen from '../screens/profile/ProfileScreen';
 import MovieDetailScreen from '../screens/movie/MovieDetailScreen';
+import SeatSelectionScreen from '../screens/booking/SeatSelectionScreen';
 import PaymentScreen from '../screens/booking/PaymentScreen';
 
 const Tab = createBottomTabNavigator();
@@ -89,6 +90,7 @@ const MainNavigator = () => {
     >
       <Stack.Screen name="MainTabs" component={MainTabs} />
       <Stack.Screen name="MovieDetail" component={MovieDetailScreen} />
+      <Stack.Screen name="SeatSelection" component={SeatSelectionScreen} />
       <Stack.Screen name="Payment" component={PaymentScreen} />
     </Stack.Navigator>
   );

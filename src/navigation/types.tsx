@@ -16,19 +16,32 @@ export type MainTabParamList = {
 
 // Main Stack (contains tabs + other screens)
 export type MainStackParamList = {
-  MainTabs: undefined;
+  MainTabs: NavigatorScreenParams<MainTabParamList>;
   MovieDetail: {
     movieId: string;
+  };
+  SeatSelection: {
+    movieId: string;
+    movieTitle: string;
+    poster: string;
   };
   Payment: {
     movieId: string;
     movieTitle: string;
     poster: string;
+    seats: Array<{
+      seatId: string;
+      row: string;
+      number: number;
+      type: 'regular' | 'vip';
+      price: number;
+    }>;
+    totalPrice: number;
   };
 };
 
 // Root Stack
-export type RootStackParamList = {
+export type RootStackParamList = MainStackParamList & {
   Auth: undefined;
   Main: undefined;
 };
